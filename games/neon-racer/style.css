@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #050510;
+    font-family: 'Orbitron', "Microsoft YaHei", sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#game-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* UI 层 - 赛博朋克风格 */
+#ui-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 顶部 HUD */
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+    z-index: 5;
+}
+
+.hud-box {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #0ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transform: skewX(-15deg);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.hud-value {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 900;
+    display: block;
+    transform: skewX(15deg);
+    /* 反向倾斜文字 */
+}
+
+.hud-label {
+    font-size: 12px;
+    color: #0ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: skewX(15deg);
+}
+
+/* 速度条 */
+.speed-bar-container {
+    width: 200px;
+    height: 10px;
+    background: #333;
+    margin-top: 5px;
+    transform: skewX(15deg);
+    overflow: hidden;
+}
+
+#speed-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #0ff, #f0f);
+    transition: width 0.1s;
+}
+
+/* 开始/结束屏幕 */
+#start-screen,
+#game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 16, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: auto;
+    backdrop-filter: blur(8px);
+    transition: opacity 0.5s;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: transparent;
+    background: linear-gradient(180deg, #fff, #0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 60px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    filter: drop-shadow(0 0 20px #0ff);
+    font-style: italic;
+}
+
+h2 {
+    color: #f0f;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 0;
+    text-shadow: 0 0 10px #f0f;
+}
+
+p {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 1.8;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid #f0f;
+    padding: 15px 60px;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.5), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background: #f0f;
+    color: #000;
+    box-shadow: 0 0 40px #f0f;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* 移动端控制 */
+#mobile-controls {
+    display: none;
+    width: 100%;
+    height: 150px;
+    padding-bottom: 30px;
+    pointer-events: auto;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.control-btn {
+    width: 90px;
+    height: 90px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    transition: 0.1s;
+}
+
+.control-btn span {
+    transform: rotate(-45deg);
+    font-size: 40px;
+    color: #0ff;
+    pointer-events: none;
+}
+
+.control-btn:active {
+    background: rgba(0, 255, 255, 0.6);
+    border-color: #fff;
+    box-shadow: 0 0 30px #0ff;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#sun-background {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(255, 0, 255, 0.2), transparent);
+    z-index: 0;
+    pointer-events: none;
+}

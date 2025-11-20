@@ -237,7 +237,7 @@ closePanelBtn.addEventListener('click', () => {
     countryPanel.classList.add('translate-x-[120%]');
     document.body.classList.remove('panel-open');
     selectedCountry = null;
-    // Resume auto-rotation
+    // 恢复自动旋转
     world.controls().autoRotate = true;
     updateRotateBtnState(true);
 });

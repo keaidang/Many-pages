@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>極速霓虹賽車 3D - 專業版</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 游戏渲染容器 -->
+    <div id="game-container"></div>
+
+    <!-- 背景装饰 -->
+    <div id="sun-background"></div>
+
+    <!-- UI 界面 -->
+    <div id="ui-layer">
+        <div class="hud-top">
+            <div class="hud-box">
+                <span class="hud-label">SCORE</span>
+                <span class="hud-value" id="score-display">0</span>
+            </div>
+            <div class="hud-box">
+                <span class="hud-label">SPEED</span>
+                <span class="hud-value" id="speed-display">0 KM/H</span>
+                <div class="speed-bar-container">
+                    <div id="speed-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端控制按钮 -->
+        <div id="mobile-controls">
+            <div class="control-btn" id="btn-left"><span>←</span></div>
+            <div class="control-btn" id="btn-right"><span>→</span></div>
+        </div>
+    </div>
+
+    <!-- 开始屏幕 -->
+    <div id="start-screen">
+        <h1>NEON RACER</h1>
+        <h2>極速霓虹</h2>
+        <p>左右移動躲避紅色障礙<br>生存越久，速度越快</p>
+        <button class="btn" id="start-btn">START GAME</button>
+    </div>
+
+    <!-- 游戏结束屏幕 -->
+    <div id="game-over-screen" class="hidden">
+        <h1>CRASHED</h1>
+        <h2>遊戲結束</h2>
+        <p id="final-score">最終得分: 0</p>
+        <button class="btn" id="restart-btn">RETRY</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

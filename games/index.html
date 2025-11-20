@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 游戏 | 前端世界</title>
+    <meta name="description" content="纯 Web 技术实现的休闲小游戏。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <header class="site-header">
+        <nav class="container">
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">前端<span
+                        class="highlight">世界</span></a></div>
+            <ul class="nav-links">
+                <li><a href="../designs/">精选设计</a></li>
+                <li><a href="../tools/">前端工具</a></li>
+                <li><a href="../games/" class="active">HTML5 游戏</a></li>
+                <li><a href="../about.html">关于我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section" style="padding-top: 120px;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">HTML5 游戏</h2>
+                    <p class="section-desc">在浏览器中畅玩酷炫的前端小作品</p>
+                </div>
+                <div class="grid">
+                    <article class="card game-card">
+                        <div class="card-image game-image-neon"></div>
+                        <div class="card-overlay">
+                            <a href="neon-racer/index.html" class="btn btn-sm">立即体验</a>
+                        </div>
+                        <div class="card-content">
+                            <h3>Neon Racer 霓虹赛车</h3>
+                            <p>穿梭在霓虹高速赛道，躲避障碍挑战你的反应极限。</p>
+                            <a href="neon-racer/index.html" class="card-link">进入游戏 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card game-card">
+                        <div class="card-image placeholder-game-2"></div>
+                        <div class="card-overlay">
+                            <button class="btn btn-sm" disabled>即将上线</button>
+                        </div>
+                        <div class="card-content">
+                            <h3>2048</h3>
+                            <p>让人停不下来的数字益智游戏。</p>
+                        </div>
+                    </article>
+                    <article class="card game-card">
+                        <div class="card-image placeholder-game-3"></div>
+                        <div class="card-overlay">
+                            <button class="btn btn-sm" disabled>即将上线</button>
+                        </div>
+                        <div class="card-content">
+                            <h3>打砖块</h3>
+                            <p>复古街机风格的打砖块游戏。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025-2026 keaidang. Built with ❤️ & Code.</p>
+            <p><a href="https://beian.miit.gov.cn/" target="_blank"
+                    style="color: inherit; text-decoration: none; font-size: 0.8rem; opacity: 0.7;">鲁ICP备2025186072号</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
