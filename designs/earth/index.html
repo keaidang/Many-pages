@@ -27,6 +27,22 @@
         </h1>
         <p class="text-blue-200/80 text-sm md:text-base max-w-xs mt-2">
         </p>
+    </div>
+
+    <!-- Overlay UI: Legend -->
+    <div class="absolute bottom-6 left-6 z-10 pointer-events-none">
+        <div class="bg-black/60 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+            <h3 class="text-white/80 text-xs font-bold uppercase mb-2">人口密度标尺</h3>
+            <div class="flex items-center gap-2">
+                <span class="text-xs text-yellow-100">低</span>
+                <div class="w-32 h-3 rounded-full bg-gradient-to-r from-[#ffffb2] via-[#fd8d3c] to-[#bd0026]"></div>
+                <span class="text-xs text-red-500">高</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay UI: Controls -->
+    <div class="absolute bottom-6 right-6 z-10 flex flex-col gap-3 pointer-events-auto">
         <button id="resetBtn"
             class="glass-panel p-3 rounded-full text-white hover:bg-white/20 transition-all shadow-lg group relative"
             title="重置视角">

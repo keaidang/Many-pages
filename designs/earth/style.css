@@ -1,3 +1,29 @@
+:root {
+    --panel-gap: 20px;
+    --panel-width: min(24rem, calc(100vw - (2 * var(--panel-gap))));
+}
+
+@media (max-width: 768px) {
+    :root {
+        --panel-width: min(20rem, calc(100vw - (2 * var(--panel-gap))));
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    font-family: sans-serif;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -13,6 +39,11 @@
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#countryPanel {
+    width: var(--panel-width);
+    max-width: calc(100vw - (2 * var(--panel-gap)));
 }
 
 .back-link {
@@ -32,4 +63,15 @@
 .back-link:hover {
     background: white;
     color: black;
+}
+
+body.panel-open .back-link {
+    right: calc(var(--panel-gap) + var(--panel-width));
+}
+
+@media (max-width: 768px) {
+    body.panel-open .back-link {
+        right: var(--panel-gap);
+        top: calc(20px + 70px);
+    }
 }

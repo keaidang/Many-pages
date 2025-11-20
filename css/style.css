@@ -264,6 +264,12 @@ ul {
     background-size: cover;
     background-position: center;
 }
+.card-image-earth {
+    background-image: url('../images/首页图片/全球人口.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .placeholder-gradient-1 { background: linear-gradient(45deg, #2c3e50, #3498db); }
 .placeholder-gradient-2 { background: linear-gradient(45deg, #232526, #414345); }

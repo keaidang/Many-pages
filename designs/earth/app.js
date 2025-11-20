@@ -235,6 +235,7 @@ startBtn.addEventListener('click', () => {
 
 closePanelBtn.addEventListener('click', () => {
     countryPanel.classList.add('translate-x-[120%]');
+    document.body.classList.remove('panel-open');
     selectedCountry = null;
     // Resume auto-rotation
     world.controls().autoRotate = true;
@@ -380,6 +381,7 @@ async function showCountryDetails(properties) {
 
     // 显示面板
     countryPanel.classList.remove('translate-x-[120%]');
+    document.body.classList.add('panel-open');
 
     // 加载状态
     panelLoading.classList.remove('hidden');
